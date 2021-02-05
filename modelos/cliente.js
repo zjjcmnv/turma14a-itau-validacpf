@@ -8,7 +8,10 @@ module.exports = class Cliente {
     var soma;
     var resto;
     soma = 0;
-    
+
+    if(!this.cpf) return false;
+    this.cpf = this.cpf.match(/\d/g).join("")
+
     if (this.cpf.length > 11) return false;
     if (this.cpf.length < 11) return false;
     if (this.cpf == "00000000000") return false;
